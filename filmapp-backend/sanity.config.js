@@ -5,9 +5,9 @@ import {schemaTypes} from './schemaTypes'
 
 export default defineConfig({
   name: 'default',
-  title: 'FilmApp',
+  title: 'filmapp-backend',
 
-  projectId: '65p0lrc6',
+  projectId: 'u7zv1h76',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],
