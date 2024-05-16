@@ -3,7 +3,7 @@ body {
   background-color: white;
   font-family: "Thasadith", sans-serif;
 }
-body div {
+body header {
   background-color: rgb(14, 6, 32);
   width: 100%;
   padding: 1rem;
@@ -12,15 +12,15 @@ body div {
   position: fixed;
   box-shadow: 0 4px 8px #9e9e9e;
 }
-body nav ul {
+body header nav ul {
   list-style: none;
   float: right;
   margin-right: 5rem;
 }
-body nav ul li {
+body header nav ul li {
   display: inline-flex;
 }
-body nav ul li a {
+body header nav ul li a {
   padding: 2rem;
   font-size: large;
   font-weight: 600;
@@ -30,7 +30,7 @@ body nav ul li a {
   color: white;
   text-decoration: none;
 }
-body nav ul li a:hover {
+body header nav ul li a:hover {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   background-color: rgb(231, 51, 60);
@@ -38,6 +38,6 @@ body nav ul li a:hover {
   font-weight: 600;
   transition: 0.1s;
 }
-body nav ul li a:hover:active {
+body header nav ul li a:hover:active {
   text-decoration: underline;
 }/*# sourceMappingURL=main.css.map */
