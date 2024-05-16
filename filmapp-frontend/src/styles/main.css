@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+body {
+  background-color: white;
+  font-family: "Thasadith", sans-serif;
+}
+body div {
+  background-color: rgb(14, 6, 32);
+  width: 100%;
+  padding: 1rem;
+  top: 0;
+  text-align: center;
+  position: fixed;
+  box-shadow: 0 4px 8px #9e9e9e;
+}
+body nav ul {
+  list-style: none;
+  float: right;
+  margin-right: 5rem;
+}
+body nav ul li {
+  display: inline-flex;
+}
+body nav ul li a {
+  padding: 2rem;
+  font-size: large;
+  font-weight: 600;
+  font-style: normal;
+  padding: 1rem;
+  margin-left: 2rem;
+  color: white;
+  text-decoration: none;
+}
+body nav ul li a:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+  background-color: rgb(231, 51, 60);
+  border-radius: 5px;
+  font-weight: 600;
+  transition: 0.1s;
+}
+body nav ul li a:hover:active {
+  text-decoration: underline;
+}/*# sourceMappingURL=main.css.map */
