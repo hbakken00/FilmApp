@@ -4,7 +4,8 @@
 body{
     background-color: white;
     font-family: "Thasadith", sans-serif;
-    div{
+
+    header{
         background-color: rgb(14, 6, 32);
         width: 100%;
         padding: 1rem;
@@ -12,7 +13,6 @@ body{
         text-align: center;
         position: fixed;
         box-shadow: 0 4px 8px rgba($color: #9e9e9e, $alpha: 1.0);
-    }
 
  
     nav{
@@ -58,4 +58,5 @@ body{
       
 
     }
+}
 }

@@ -4,6 +4,7 @@ import { RiTv2Line } from "react-icons/ri";
 
 export const Navigation = () =>{
     return(
+    <header>
         <nav>
             <ul>
                 <li><a href="#"> <RiTv2Line /> Hva skal jeg se?</a></li>
@@ -11,5 +12,6 @@ export const Navigation = () =>{
                 <li><a href="#"> <RiAccountCircleFill />  Bruker</a></li>
             </ul>
         </nav>
+    </header>
     )
 }
