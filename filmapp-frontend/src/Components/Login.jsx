@@ -20,7 +20,7 @@ const VelgBruker = ({ onUserSelect }) => {
          </ul> 
         </nav>
       </section>
-    )  // ikke ferdig 
+    )  
 } 
 
 export default VelgBruker
