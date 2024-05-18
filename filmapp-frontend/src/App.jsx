@@ -2,9 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { Navigation } from './Components/Navigation'
-import './App.css'
+import './styles/main.scss'
 import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom'
 import VelgBruker from './Components/Login'
+import HomeComponent from './Components/Home';
+
 
 
 const App = () => {
@@ -12,32 +14,37 @@ const App = () => {
 
   return (
 
-    <>
-      
+    <Router>
+
           <Navigation/>
           <AppRoutes/>
-      
-    </>
-
+    
+    </Router>
   )
 }
+
 
 const AppRoutes = () => {
   
   const history = useHistory()
 
-  const brukerSeleksjon = (user) => {
+  const brukerValg = (user) => {
+
     localStorage.setItem ("selectedUser", JSON.stringify(user))
-    history.push("/Home")
+
+    history.push("/home")
+
   }
 
   return(
+
+
     <Switch>
       <Route path="/select-user" > 
 
-        <VelgBruker onUserSelect={brukerSeleksjon} /> </Route>
+        <VelgBruker onUserSelect={brukerValg} /> </Route>
 
-      <Route path="/Home">
+      <Route path="/home">
 
         <HomeComponent /> </Route>
 

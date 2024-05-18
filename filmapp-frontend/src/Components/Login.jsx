@@ -1,10 +1,12 @@
 import React from "react"
 import users from "../../../filmapp-backend/schemaTypes/brukere"
+import "../styles/main.scss"
 
-// login "velg bruker funksjon"
+// login "velg bruker" funksjon
 const VelgBruker = ({ onUserSelect }) => { 
     return (
-      <section className="bruker-valg">
+     
+     <section className="bruker-valg">
         <header>
           <h1>Hvem skal se idag?</h1>
           <p>Velg bruker</p>
@@ -16,7 +18,6 @@ const VelgBruker = ({ onUserSelect }) => {
               <button onClick={() => onUserSelect(user)}>{user.name}</button>
            </li>
          ))}
-
          </ul> 
         </nav>
       </section>

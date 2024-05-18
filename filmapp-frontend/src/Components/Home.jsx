@@ -8,7 +8,7 @@ const HomeComponent = () => {
     if (selectedUser) {
       setUser(JSON.parse(selectedUser))
     }
-  }, [])
+  }, [] )
 
   if (!user) {
     return <p>Laster inn ..</p>
@@ -17,8 +17,8 @@ const HomeComponent = () => {
   return (
     <main>
       <header>
-        <h1> Velkommen {user.name}! </h1>
-        <p>Ditt bruker navn er: {user.username} </p>
+        <h1>Velkommen, {user.name}!</h1>
+        <p>Ditt brukernavn er: {user.username}</p>
       </header>
 
       <article>
