@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { BrowserRouter as Route, Routes, Navigate, useNavigate } from 'react-router-dom'
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom'
 import { Navigation } from './Components/Navigation'
 import VelgBruker from './Components/Login'
 import HomeComponent from './Components/Home'
@@ -38,7 +38,7 @@ const AppRoutes = () => {
   }
 
   return(
-// Routes i appen 
+// Routes i appen
     <Routes> 
       <Route path="/velg-bruker" element={<VelgBruker onUserSelect={brukerValg} />} />
       <Route path="/home" element={<HomeComponent />} />
