@@ -14,7 +14,10 @@ const HomeComponent = () => {
     return <p>Laster inn ..</p>
   }
 
-  return (
+  return ( // foreløpig html struktur som mapper og skriver ut .. 
+  // har ikke style enda og den mapper bare fra bruker,
+  //js men skal egentlig mappe fra egen array fil i sanity som vi skal pushe API kallene til, 
+  //for å så hente de ut på front end
     <main className='main-content'>
       <header>
         <h1>Velkommen, {user.name}!</h1>

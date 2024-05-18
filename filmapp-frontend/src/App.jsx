@@ -1,9 +1,9 @@
 
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
-import { Navigation } from './Components/Navigation';
-import VelgBruker from './Components/Login';
-import HomeComponent from './Components/Home';
+import React from 'react'
+import { BrowserRouter as Route, Routes, Navigate, useNavigate } from 'react-router-dom'
+import { Navigation } from './Components/Navigation'
+import VelgBruker from './Components/Login'
+import HomeComponent from './Components/Home'
 import './styles/main.css'
 
 
@@ -24,7 +24,7 @@ const App = () => {
   )
 }
 
-
+// funksjon for å velge bruker som bruker useNavigate();
 const AppRoutes = () => {
   
   const navigate = useNavigate()
@@ -38,11 +38,11 @@ const AppRoutes = () => {
   }
 
   return(
-
-    <Routes>
-      <Route path="/select-user" element={<VelgBruker onUserSelect={brukerValg} />} />
+// Routes i appen 
+    <Routes> 
+      <Route path="/velg-bruker" element={<VelgBruker onUserSelect={brukerValg} />} />
       <Route path="/home" element={<HomeComponent />} />
-      <Route path="*" element={<Navigate to="/select-user" />} />
+      <Route path="*" element={<Navigate to="/velg-bruker" />} />
     </Routes>
   )
 }
