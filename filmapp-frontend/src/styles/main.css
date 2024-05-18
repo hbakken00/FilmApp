@@ -4,7 +4,6 @@ body {
   font-family: "Thasadith", sans-serif;
 }
 body header {
-  background-color: rgb(14, 6, 32);
   width: 100%;
   padding: 1rem;
   top: 0;
@@ -40,4 +39,36 @@ body header nav ul li a:hover {
 }
 body header nav ul li a:hover:active {
   text-decoration: underline;
+}
+
+.bruker-valg {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+
+.bruker-valg header h1 {
+  font-size: 2rem;
+}
+
+.bruker-valg header p {
+  font-size: 1.2rem;
+}
+
+.bruker-knapper li {
+  margin: 10px;
+}
+
+.bruker-knapper button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: rgb(255, 0, 0);
+  transition: background-color 0.3s;
+}
+
+.bruker-knapper button:hover {
+  background-color: #333;
 }/*# sourceMappingURL=main.css.map */

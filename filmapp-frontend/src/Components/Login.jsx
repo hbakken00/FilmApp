@@ -3,7 +3,10 @@ import users from "../../../filmapp-backend/schemaTypes/brukere"
 import "../styles/main.scss"
 
 // login "velg bruker" funksjon
-const VelgBruker = ({ onUserSelect }) => { 
+const VelgBruker = ({ onUserSelect }) => {  // parameter som sendes med til App.jsx
+
+  console.log("VelgBruker component rendered"); // Debug output
+  console.log("Users:", users); // Debug output to check users data
     return (
      
      <section className="bruker-valg">

@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { Navigation } from './Components/Navigation'
-import './styles/main.scss'
-import { BrowserRouter as Router, Route, Switch, Redirect, useHistory } from 'react-router-dom'
-import VelgBruker from './Components/Login'
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
+import { Navigation } from './Components/Navigation';
+import VelgBruker from './Components/Login';
 import HomeComponent from './Components/Home';
+import './styles/main.css'
+
+
 
 
 
@@ -14,43 +15,35 @@ const App = () => {
 
   return (
 
-    <Router>
+    <>
 
           <Navigation/>
           <AppRoutes/>
     
-    </Router>
+    </>
   )
 }
 
 
 const AppRoutes = () => {
   
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const brukerValg = (user) => {
 
     localStorage.setItem ("selectedUser", JSON.stringify(user))
 
-    history.push("/home")
+    navigate('/home')
 
   }
 
   return(
 
-
-    <Switch>
-      <Route path="/select-user" > 
-
-        <VelgBruker onUserSelect={brukerValg} /> </Route>
-
-      <Route path="/home">
-
-        <HomeComponent /> </Route>
-
-      <Redirect from= "/" to= "/select-user" /> 
-
-    </Switch>
+    <Routes>
+      <Route path="/select-user" element={<VelgBruker onUserSelect={brukerValg} />} />
+      <Route path="/home" element={<HomeComponent />} />
+      <Route path="*" element={<Navigate to="/select-user" />} />
+    </Routes>
   )
 }
 
