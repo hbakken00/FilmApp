@@ -4,7 +4,7 @@ import { RiTv2Line } from "react-icons/ri";
 
 export const Navigation = () =>{
     return(
-    <header>
+    <header className="navheader">
         <nav>
             <ul>
                 <li><a href="#"> <RiTv2Line /> Hva skal jeg se?</a></li>

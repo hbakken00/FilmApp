@@ -35,7 +35,7 @@ const HomeComponent = () => {
 
         <section>
           <header>
-            <h2>Foretrukne Sjanger</h2>
+            <h2>Foretrukne Sjangere</h2>
           </header>
           <ul>
             {user.preferredGenres.map((genre, index) => (

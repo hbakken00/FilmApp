@@ -3,7 +3,7 @@ body {
   background-color: white;
   font-family: "Thasadith", sans-serif;
 }
-body header {
+body .navheader {
   width: 100%;
   padding: 1rem;
   top: 0;
@@ -11,15 +11,15 @@ body header {
   position: fixed;
   box-shadow: 0 4px 8px #9e9e9e;
 }
-body header nav ul {
+body .navheader .navheader nav .navheader ul {
   list-style: none;
   float: right;
   margin-right: 5rem;
 }
-body header nav ul li {
+body .navheader .navheader nav .navheader ul .navheader li {
   display: inline-flex;
 }
-body header nav ul li a {
+body .navheader .navheader nav .navheader ul .navheader li .navheader a {
   padding: 2rem;
   font-size: large;
   font-weight: 600;
@@ -29,7 +29,7 @@ body header nav ul li a {
   color: white;
   text-decoration: none;
 }
-body header nav ul li a:hover {
+body .navheader .navheader nav .navheader ul .navheader li .navheader a:hover {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   background-color: rgb(231, 51, 60);
@@ -37,7 +37,7 @@ body header nav ul li a:hover {
   font-weight: 600;
   transition: 0.1s;
 }
-body header nav ul li a:hover:active {
+.navheader body .navheader .navheader nav .navheader ul .navheader li .navheader a:hover:active {
   text-decoration: underline;
 }
 
@@ -66,6 +66,73 @@ body header nav ul li a:hover:active {
   border: none;
   background-color: black;
   color: rgb(255, 0, 0);
+  transition: background-color 0.3s;
+}
+
+.bruker-knapper button:hover {
+  background-color: #333;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  margin-top: 80px;
+  padding: 20px;
+  flex: 1;
+}
+
+.bruker-valg {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 20px;
+}
+
+.bruker-valg header h1 {
+  font-size: 2rem;
+}
+
+.bruker-valg header p {
+  font-size: 1.2rem;
+}
+
+.bruker-knapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bruker-knapper li {
+  margin: 10px;
+}
+
+.bruker-knapper button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: white;
   transition: background-color 0.3s;
 }
 

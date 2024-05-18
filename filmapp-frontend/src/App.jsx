@@ -11,15 +11,15 @@ import './styles/main.css'
 
 
 const App = () => {
-
-
   return (
-
     <>
+      <header>
+        <Navigation />
+      </header>
 
-          <Navigation/>
-          <AppRoutes/>
-    
+      <main className="main-innhold">
+        <AppRoutes />
+      </main>
     </>
   )
 }

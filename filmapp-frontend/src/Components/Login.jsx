@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from 'prop-types'
 import users from "../../../filmapp-backend/schemaTypes/brukere"
 import "../styles/main.scss"
 
@@ -26,6 +27,9 @@ const VelgBruker = ({ onUserSelect }) => {  // parameter som sendes med til App.
       </section>
     )  
 } 
+VelgBruker.propTypes = { // måtte legge inn denne fordi proptype error i konsollen 
+  onUserSelect: PropTypes.func.isRequired, 
+}
 
 export default VelgBruker
 
