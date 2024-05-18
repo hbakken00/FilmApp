@@ -18,7 +18,7 @@ const HomeComponent = () => {
     <main>
       <header>
         <h1>Velkommen, {user.name}!</h1>
-        <p>Ditt brukernavn er: {user.username}</p>
+       
       </header>
 
       <article>
