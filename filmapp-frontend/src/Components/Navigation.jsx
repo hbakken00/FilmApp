@@ -1,6 +1,6 @@
-import React from "react";
-import { RiAccountCircleFill } from "react-icons/ri";
-import { RiTv2Line } from "react-icons/ri";
+import React from "react"
+import { RiAccountCircleFill, RiTv2Line } from "react-icons/ri"
+import { Link } from "react-router-dom"
 
 export const Navigation = () =>{
     return(
