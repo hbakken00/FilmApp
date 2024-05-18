@@ -15,7 +15,7 @@ const HomeComponent = () => {
   }
 
   return (
-    <main>
+    <main className='main-content'>
       <header>
         <h1>Velkommen, {user.name}!</h1>
        
