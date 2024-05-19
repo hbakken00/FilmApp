@@ -31,7 +31,7 @@ const FetchUsers = ({ onUserSelect }) => {
         setUsers(data);
       } catch (error) {
         console.error("Error fetching users:", error);
-        setError("Failed to load users.");
+        setError("Feil ved fetch av brukere..");
       } finally {
         setLoading(false);
       }
