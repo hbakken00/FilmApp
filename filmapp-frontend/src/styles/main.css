@@ -85,11 +85,7 @@ body, html {
   background-color: #333;
 }
 
-body {
-  background-color: white;
-  font-family: "Thasadith", sans-serif;
-}
-body #navheader {
+#navheader {
   background-color: rgb(14, 6, 32);
   width: 100%;
   padding: 1rem;
@@ -98,7 +94,7 @@ body #navheader {
   position: fixed;
   box-shadow: 0 4px 8px #9e9e9e;
 }
-body #navheader nav .logo {
+#navheader nav .logo {
   color: white;
   float: left;
   padding: 2rem;
@@ -107,15 +103,15 @@ body #navheader nav .logo {
   font-style: italic;
   font-weight: 900;
 }
-body #navheader nav ul {
+#navheader nav ul {
   list-style: none;
   float: right;
   margin-right: 5rem;
 }
-body #navheader nav ul li {
+#navheader nav ul li {
   display: inline-flex;
 }
-body #navheader nav ul li a {
+#navheader nav ul li a {
   padding: 2rem;
   font-size: large;
   font-weight: 600;
@@ -125,11 +121,16 @@ body #navheader nav ul li a {
   color: white;
   text-decoration: none;
 }
-body #navheader nav ul li a:hover {
+#navheader nav ul li a:hover {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   background-color: rgb(223, 61, 61);
   border-radius: 5px;
   font-weight: 600;
   transition: 0.1s;
+}
+
+body {
+  background-color: white;
+  font-family: "Thasadith", sans-serif;
 }/*# sourceMappingURL=main.css.map */

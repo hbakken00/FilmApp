@@ -1,89 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Thasadith:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import 'login';
-
-
+@import 'navigasion';
 
 
   
-  // Naviagtion.jsx styling 
+
 
   body{
     background-color: white;
     font-family: "Thasadith", sans-serif;
 
 
-    #navheader{
-        background-color: rgb(14, 6, 32);
-        width: 100%;
-        padding: 1rem;
-        top: 0;
-        text-align: center;
-        position: fixed;
-        box-shadow: 0 4px 8px rgba($color: #9e9e9e, $alpha: 1.0);
-
-
- 
-    nav{
-
-
-        .logo{
-            color: white;
-            float: left;
-            padding: 2rem;
-            font-size: x-large;
-            text-decoration: none;
-            font-style: italic;
-            font-weight: 900;
-
-
-
-
-        }
-
-
-
-
-        ul{
-            list-style: none;
-            float: right;
-            margin-right: 5rem;
-
-
-            li{
-               
-                display: inline-flex;
-                a{
-                    padding: 2rem;
-                    font-size: large;
-                    font-weight: 600;
-                    font-style: normal;
-                    padding: 1rem;
-                    margin-left: 2rem;
-                    color: white;
-                    text-decoration: none;
-
-
-               
-                    &:hover{
-                        color: rgb(0, 0, 0);
-                        text-decoration: underline;
-                        background-color: rgb(223, 61, 61);
-                        border-radius: 5px;
-                        font-weight: 600;
-                        transition: 0.1s;
-                    }
-                   
-                }
-            }
-        }
-       
-       
-     
-
-
-    }
+   
 }
-}
-
-
-// Naviagtion.jsx styling 
