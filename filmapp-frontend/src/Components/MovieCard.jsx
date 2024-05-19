@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import FilmDatabase from "../Api/FilmDatabase";
 import client from "../Api/sanityClient";
-import movie from "../../../filmapp-backend/schemaTypes/movie";
 import { useState, useEffect } from "react";
 
 

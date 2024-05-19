@@ -5,7 +5,6 @@ import { Navigation } from './Components/Navigation'
 import HomeComponent from './Components/Home'
 import FetchUsers from "./Api/FetchBrukere"
 import './styles/main.css'
-import FilmDatabase from './Api/FilmDatabase'
 
 
 
@@ -26,7 +25,7 @@ const App = () => {
       </main>
 
     </>
-    //la inn <article> for visning av filmer. 
+    //la inn <article> for visning av filmer.
   )
 }
 
