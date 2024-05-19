@@ -25,9 +25,6 @@ const App = () => {
 
       </main>
 
-      <article>
-      <FilmDatabase></FilmDatabase>
-      </article>
     </>
     //la inn <article> for visning av filmer. 
   )
