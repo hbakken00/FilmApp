@@ -1,12 +1,7 @@
-import React, {useState, useEffect} from 'react';
 import MovieCard from '../Components/MovieCard';
 
-const film_data= () => {
-  const [data, setData] =useState([]);
-  const [error, setError]= useState (null);
-  const [loading, setLoading] = useState(true);
+const filmData= () => {
 
-   useEffect(() => {
     const fetchData =async () => {
       const url = 'https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=%3CREQUIRED%3E';
       const options = {
@@ -27,6 +22,6 @@ const film_data= () => {
     }
     fetchData()
 
-})}
+}
 
-export default film_data
+export default filmData
