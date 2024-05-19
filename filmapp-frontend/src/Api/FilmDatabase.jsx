@@ -1,14 +1,10 @@
 import React, {useState} from 'react';
-import axios from 'axios'; 
 
-const film_data = ({type, value, onChange})=> {
-  const [query, setQuery] = useState ('');
-  const [results, setResults] = useState ([]);
-  const [loading, setLoading] = useState(false)
-  
+function film_data({}){
     const fetchData =async () => {
-      setLoading(true)
         
+        const axios = require('axios');
+
         const options = {
           method: 'GET',
           url: 'https://moviesdatabase.p.rapidapi.com/titles/series/%7BseriesId%7D',
@@ -20,7 +16,6 @@ const film_data = ({type, value, onChange})=> {
         
         try {
             const response = await axios.request(options);
-            setResults (response.data.results)
             console.log(response.data);
         } catch (error) {
             console.error(error);
