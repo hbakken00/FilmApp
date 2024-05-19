@@ -6,7 +6,7 @@ const film_data= () => {
   const [error, setError]= useState (null);
   const [loading, setLoading] = useState(true);
 
-      useEffect(() => {
+   useEffect(() => {
     const fetchData =async () => {
       const url = 'https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=%3CREQUIRED%3E';
       const options = {
@@ -24,22 +24,9 @@ const film_data= () => {
       } catch (error) {
         console.error(error);
       }
-    };
+    }
+    fetchData()
 
-    fetchData();
-}, []);
-    if (loading) return <p>Laster...</p>;
-    if (error) return <p>{error}</p>;
-
-return (
-  <article>
-    <h1>Film Data</h1>
-    <ul> {data.map((item) =>(
-      <li key={item.id}>{item.title}</li>
-       
-    ))}</ul>
-  </article>
-)
- };
+})}
 
 export default film_data

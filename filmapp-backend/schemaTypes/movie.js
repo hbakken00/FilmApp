@@ -1,5 +1,3 @@
-//importerer apiet fra filmdatabasen
-import film_data from "../../filmapp-frontend/src/Api/FilmDatabase";
 
 // filmer
 
