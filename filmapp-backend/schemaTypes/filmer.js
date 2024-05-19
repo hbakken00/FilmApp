@@ -24,6 +24,10 @@ export default {
       type: 'array',
       of: [{ type: 'reference', to: { type: 'genre' } }],
     },
+    {
+      name: 'cover_image',
+      title: 'Cover Image',
+      type: 'url',
+    },
   ],
 };
-  
