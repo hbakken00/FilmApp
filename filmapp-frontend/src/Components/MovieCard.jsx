@@ -38,5 +38,4 @@ return (
 )
 }
 
-showMovies
-export default MovieCard
+export default MovieCard;
