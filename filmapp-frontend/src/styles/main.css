@@ -85,55 +85,52 @@ body, html {
   background-color: #333;
 }
 
-body {
-  background-color: white;
-  font-family: "Thasadith", sans-serif;
-}
-
 #navheader {
+  background-color: rgb(14, 6, 32);
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
   top: 0;
   text-align: center;
   position: fixed;
-  box-shadow: 0 4px 8px rgb(204, 116, 116);
-  background-color: #22201e;
+  box-shadow: 0 4px 8px #9e9e9e;
 }
-
-.nav {
-  display: flex;
-  justify-content: flex-end;
+#navheader nav .logo {
+  color: white;
+  float: left;
+  padding: 2rem;
+  font-size: x-large;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 900;
+}
+#navheader nav ul {
+  list-style: none;
+  float: right;
   margin-right: 5rem;
 }
-
-.navul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
+#navheader nav ul li {
+  display: inline-flex;
 }
-
-.navul li {
-  margin-left: 2rem;
-}
-
-.navul li a {
-  padding: 1rem 2rem;
+#navheader nav ul li a {
+  padding: 2rem;
   font-size: large;
   font-weight: 600;
-  color: red;
+  font-style: normal;
+  padding: 1rem;
+  margin-left: 2rem;
+  color: white;
   text-decoration: none;
 }
-
-.navul li a:hover {
+#navheader nav ul li a:hover {
   color: rgb(0, 0, 0);
   text-decoration: underline;
-  background-color: rgb(231, 51, 60);
+  background-color: rgb(223, 61, 61);
   border-radius: 5px;
+  font-weight: 600;
   transition: 0.1s;
 }
 
-.navul li a:active {
-  text-decoration: underline;
+body {
+  background-color: white;
+  font-family: "Thasadith", sans-serif;
 }/*# sourceMappingURL=main.css.map */
