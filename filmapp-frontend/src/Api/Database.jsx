@@ -20,8 +20,6 @@ function film_data({}){
                 console.error(error);
             }
         
-    
-
 
 }};
 export default film_data
