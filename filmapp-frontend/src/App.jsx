@@ -2,8 +2,8 @@
 import React from 'react'
 import { Route, Routes, Navigate, useNavigate } from 'react-router-dom'
 import { Navigation } from './Components/Navigation'
-import VelgBruker from './Components/Login'
 import HomeComponent from './Components/Home'
+import FetchUsers from "./Api/FetchBrukere"
 import './styles/main.css'
 
 
@@ -14,11 +14,15 @@ const App = () => {
   return (  // html strukturen på appen 
     <>
       <header>
+
         <Navigation />
+
       </header>
 
       <main className="main-innhold">
+
         <BrukerLogin />
+
       </main>
     </>
   )
@@ -40,7 +44,7 @@ const BrukerLogin = () => {
   return(
 // Routes i appen
     <Routes> 
-      <Route path="/velg-bruker" element={<VelgBruker onUserSelect={brukerValg} />} />
+      <Route path="/velg-bruker" element={<FetchUsers onUserSelect={brukerValg} />} /> 
       <Route path="/home" element={<HomeComponent />} />
       <Route path="*" element={<Navigate to="/velg-bruker" />} />
     </Routes>

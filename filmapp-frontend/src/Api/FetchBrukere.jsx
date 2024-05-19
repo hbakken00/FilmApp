@@ -1,9 +1,8 @@
-
-
+// src/Components/FetchBrukere.jsx
 import React, { useEffect, useState } from "react";
-import sanityClient from "./sanityClient"
-import PropTypes from 'prop-types'
-import Login from "../Components/Login"
+import client from "../Api/sanityClient";
+import PropTypes from 'prop-types';
+import VelgBruker from "../Components/Login"
 
 const query = `*[_type == "user"]{
   _id,
@@ -29,7 +28,7 @@ const FetchUsers = ({ onUserSelect }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const data = await sanityClient.fetch(query);
+        const data = await client.fetch(query);
         setUsers(data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -46,11 +45,11 @@ const FetchUsers = ({ onUserSelect }) => {
   if (error) return <p>{error}</p>;
   if (!users.length) return <p>Ingen brukere tilgjengelige</p>;
 
-  return <Login onUserSelect={onUserSelect} users={users} />;
-}
+  return <VelgBruker onUserSelect={onUserSelect} users={users} />;
+};
 
-FetchUsers.propTypes = { // måtte legge inn denne fordi proptype error i konsollen 
-    onUserSelect: PropTypes.func.isRequired, 
-  }
-  
+FetchUsers.propTypes = {
+  onUserSelect: PropTypes.func.isRequired,
+};
+
 export default FetchUsers;
