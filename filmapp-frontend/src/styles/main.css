@@ -94,6 +94,9 @@ body, html {
   position: fixed;
   box-shadow: 0 4px 8px #9e9e9e;
 }
+#navheader .hamburger {
+  display: none;
+}
 #navheader nav #logoimg {
   float: left;
   padding: 1rem;
@@ -127,6 +130,36 @@ body, html {
   transition: 0.1s;
 }
 
+@media (max-width: 908px) {
+  #navheader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #navheader .hamburger {
+    display: flex;
+    width: 3rem;
+    color: white;
+    float: right;
+    padding: 2rem;
+  }
+  #navheader ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  #navheader ul li {
+    text-align: center;
+    justify-content: center;
+  }
+  #navheader ul li a {
+    display: flex;
+    padding: 1rem;
+    text-align: center;
+  }
+  #navheader ul.open {
+    display: flex;
+  }
+}
 body {
   background-color: white;
   font-family: "Thasadith", sans-serif;
