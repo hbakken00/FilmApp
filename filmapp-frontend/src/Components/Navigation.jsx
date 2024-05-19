@@ -7,7 +7,7 @@ export const Navigation = () =>{
     return( // la inn Link fra react-router-dom og routet dem til de sidene vi har foreløpig 
     <header id="navheader">
         <nav>
-            <a className="logo">What to see?</a>
+            <Link to="/home" className="logo"><img id="logoimg" src="bildemappe/logo.png"></img></Link>
             <ul>
           <li><Link to="/home"><RiTv2Line /> Hva skal jeg se?</Link></li>       
           <li><Link to="/home">Bla gjennom sjangere</Link></li>

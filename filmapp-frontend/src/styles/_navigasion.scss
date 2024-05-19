@@ -14,18 +14,11 @@
 nav{
 
 
-    .logo{
-        color: white;
+    #logoimg{
         float: left;
-        padding: 2rem;
-        font-size: x-large;
-        text-decoration: none;
-        font-style: italic;
-        font-weight: 900;
-
-
-
-
+        padding: 1rem;
+        margin: 1rem;
+        width: 150px;
     }
 
 
@@ -51,6 +44,7 @@ nav{
                 text-decoration: none;
 
 
+
            
                 &:hover{
                     color: rgb(0, 0, 0);
@@ -60,7 +54,6 @@ nav{
                     font-weight: 600;
                     transition: 0.1s;
                 }
-               
             }
         }
     }
