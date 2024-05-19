@@ -13,7 +13,7 @@ const imdbImg = movie_img
 : "null";
 const imdb_id= `https://www.amazon.com/s?k=${encodeURIComponent(movie.title + " movie")}`;
     return (
-        <article className="Filmvisning">
+        <article className="movie-card">
             <a id="IMDB"href={imdb_id}>
            <img id= "img" src={imdbImg}/>
            <h2> {title} </h2>
