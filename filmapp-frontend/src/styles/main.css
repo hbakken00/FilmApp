@@ -145,6 +145,7 @@ body, html {
   #navheader ul {
     display: none;
     flex-direction: column;
+    text-align: center;
     width: 100%;
   }
   #navheader ul li {
