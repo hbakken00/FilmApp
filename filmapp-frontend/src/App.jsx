@@ -5,6 +5,7 @@ import { Navigation } from './Components/Navigation'
 import HomeComponent from './Components/Home'
 import FetchUsers from "./Api/FetchBrukere"
 import './styles/main.css'
+import MovieCard from './Components/MovieCard'
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
       <main className="main-innhold">
 
         <BrukerLogin />
+        <MovieCard></MovieCard>
 
       </main>
     </>
