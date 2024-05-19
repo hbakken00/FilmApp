@@ -34,6 +34,12 @@ export default {
       title: 'Cover Image',
       type: 'url',
     },
-    
+    //la inn dette under - forklaringen kommer senere når jeg vet om det funker eller ei
+    {
+      name:'imdbfilm',
+      type: 'string',
+      title:'IMDB',
+      inputComponent: film_data
+    }
   ],
 };

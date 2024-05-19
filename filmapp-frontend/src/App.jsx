@@ -10,6 +10,7 @@ import './styles/main.css'
 
 
 
+
 const App = () => {
   return (  // html strukturen på appen 
     <>
