@@ -44,7 +44,7 @@ const HomeComponent = () => {
             <h2>Foretrukne Sjangere</h2>
           </header>
           <ul>
-            {user.preferredGenres?.length > 0 ? (
+            {user.preferredGenres?.length > 0 ? ( // for å sjekke om arrayene er definerte og ikke er tomme 
               user.preferredGenres.map((genre, index) => (
                 <li key={index}>{genre.name}</li>
               ))
