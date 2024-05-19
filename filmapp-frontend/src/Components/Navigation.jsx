@@ -5,8 +5,9 @@ import { Link } from "react-router-dom"
 export const Navigation = () =>{
     return( // la inn Link fra react-router-dom og routet dem til de sidene vi har foreløpig 
     <header id="navheader">
-        <nav className="nav">
-            <ul className="navul">
+        <nav>
+            <a className="logo">What to see?</a>
+            <ul>
           <li><Link to="/home"><RiTv2Line /> Hva skal jeg se?</Link></li>       
           <li><Link to="/home">Bla gjennom sjangere</Link></li>
           <li><Link to="/select-user"><RiAccountCircleFill /> Bruker</Link></li>

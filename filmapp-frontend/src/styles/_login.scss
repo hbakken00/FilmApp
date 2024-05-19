@@ -1,0 +1,92 @@
+// login style
+.bruker-valg {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    
+
+  } 
+
+  .bruker-valg header h1 {
+    font-size: 2rem;
+
+  }
+
+  .bruker-valg header p {
+    font-size: 1.2rem;
+  }
+
+  .bruker-knapper li {
+    margin: 10px;
+  }
+
+  .bruker-knapper button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: black;
+    transition: background-color 0.3s;
+  }
+
+  .bruker-knapper button:hover {
+    background-color: #ff0000;
+  }
+// login style
+
+
+body, html {
+background-color: white;
+font-family: "Thasadith", sans-serif;
+margin: 0;
+padding: 0;
+height: 100%;
+}
+
+
+.main-innhold {
+background-color: #3333334b;
+margin-top: 80px; 
+padding: 20px;
+flex: 1;
+}
+
+.bruker-valg {
+text-align: center;
+font-family: Arial, sans-serif;
+margin-top: 20px;
+}
+
+.bruker-valg header h1 {
+font-size: 2rem;
+}
+
+.bruker-valg header p {
+font-size: 1.2rem;
+}
+
+.bruker-knapper {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+justify-content: center;
+}
+
+.bruker-knapper li {
+margin: 10px;
+}
+
+.bruker-knapper button {
+padding: 10px 20px;
+font-size: 1rem;
+cursor: pointer;
+border: none;
+background-color: black;
+color: white;
+transition: background-color 0.3s;
+}
+
+.bruker-knapper button:hover {
+background-color: #333;
+}
