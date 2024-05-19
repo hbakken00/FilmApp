@@ -11,7 +11,7 @@ import './styles/main.css'
 
 
 const App = () => {
-  return (
+  return (  // html strukturen på appen 
     <>
       <header>
         <Navigation />
