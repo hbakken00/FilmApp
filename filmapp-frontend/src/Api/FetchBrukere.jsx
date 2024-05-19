@@ -1,4 +1,3 @@
-// src/Components/FetchBrukere.jsx
 import React, { useEffect, useState } from "react";
 import client from "../Api/sanityClient";
 import PropTypes from 'prop-types';
