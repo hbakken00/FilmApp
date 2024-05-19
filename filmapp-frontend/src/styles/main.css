@@ -94,14 +94,11 @@ body, html {
   position: fixed;
   box-shadow: 0 4px 8px #9e9e9e;
 }
-#navheader nav .logo {
-  color: white;
+#navheader nav #logoimg {
   float: left;
-  padding: 2rem;
-  font-size: x-large;
-  text-decoration: none;
-  font-style: italic;
-  font-weight: 900;
+  padding: 1rem;
+  margin: 1rem;
+  width: 150px;
 }
 #navheader nav ul {
   list-style: none;
