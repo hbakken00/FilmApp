@@ -3,7 +3,7 @@ import { RiAccountCircleFill, RiTv2Line } from "react-icons/ri"
 import { Link } from "react-router-dom"
 
 export const Navigation = () =>{
-    return( // la inn Link fra react og routet dem til de sidene vi har foreløpig 
+    return( // la inn Link fra react-router-dom og routet dem til de sidene vi har foreløpig 
     <header id="navheader">
         <nav className="nav">
             <ul className="navul">
