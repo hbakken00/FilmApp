@@ -14,9 +14,9 @@ export const Navigation = () =>{
             <Link to="/home" className="logo"><img id="logoimg" src="bildemappe/logo.png" alt="logo"></img></Link>
             <div className="hamburger" onClick={toggleMenu}><RiMenu3Line/></div>
             <ul className={menuOpen ? 'open' : ''}>
-          <li><Link to="/home"><RiTv2Line /> Hva skal jeg se?</Link></li>       
+          <li><Link to="/hva-skal-jeg-se"><RiTv2Line /> Hva skal jeg se?</Link></li>       
           <li><Link to="/home">Bla gjennom sjangere</Link></li>
-          <li><Link to="/select-user"><RiAccountCircleFill /> Bruker</Link></li>
+          <li><Link to="/velg-bruker"><RiAccountCircleFill /> Bruker</Link></li>
             </ul>
         </nav>
     </header>
