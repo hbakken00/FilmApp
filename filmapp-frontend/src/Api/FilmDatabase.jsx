@@ -1,7 +1,8 @@
-import MovieCard from '../Components/MovieCard';
-
+import React,{useEffect} from "react";
+import MovieCard from "../Components/MovieCard";
+import fetchUsers from "./FetchBrukere"
 const filmData= () => {
-
+useEffect(() => {
     const fetchData =async () => {
       const url = 'https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=%3CREQUIRED%3E';
       const options = {
@@ -20,8 +21,10 @@ const filmData= () => {
         console.error(error);
       }
     }
-    fetchData()
-
+    fetchData() },[]);
+    return (
+      <></>
+    )
 }
 
 export default filmData
