@@ -1,3 +1,6 @@
+//importerer apiet fra filmdatabasen
+import film_data from "../../filmapp-frontend/src/Api/FilmDatabase";
+
 // filmer
 
 export default {
@@ -31,5 +34,6 @@ export default {
       title: 'Cover Image',
       type: 'url',
     },
+    
   ],
 };
