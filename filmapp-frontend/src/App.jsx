@@ -18,14 +18,14 @@ const App = () => {
       </header>
 
       <main className="main-innhold">
-        <AppRoutes />
+        <BrukerLogin />
       </main>
     </>
   )
 }
 
 // funksjon for å velge bruker som bruker useNavigate();
-const AppRoutes = () => {
+const BrukerLogin = () => {
   
   const navigate = useNavigate()
 
