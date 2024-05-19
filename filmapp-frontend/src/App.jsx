@@ -5,8 +5,7 @@ import { Navigation } from './Components/Navigation'
 import HomeComponent from './Components/Home'
 import FetchUsers from "./Api/FetchBrukere"
 import './styles/main.css'
-import MovieCard from './Components/MovieCard'
-
+import FilmDatabase from './Api/FilmDatabase'
 
 
 
@@ -21,12 +20,16 @@ const App = () => {
       </header>
 
       <main className="main-innhold">
-
         <BrukerLogin />
-        <MovieCard></MovieCard>
+
 
       </main>
+
+      <article>
+      <FilmDatabase></FilmDatabase>
+      </article>
     </>
+    //la inn <article> for visning av filmer. 
   )
 }
 

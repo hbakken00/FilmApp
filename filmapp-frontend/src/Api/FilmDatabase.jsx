@@ -1,10 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import MovieCard from '../Components/MovieCard';
 
-function film_data({}){
+const film_data= () => {
+  const [data, setData] =useState([]);
+  const [error, setError]= useState (null);
+  const [loading, setLoading] = useState(true);
+
+      useEffect(() => {
     const fetchData =async () => {
-        
+      try {       
         const axios = require('axios');
-
         const options = {
           method: 'GET',
           url: 'https://moviesdatabase.p.rapidapi.com/titles/series/%7BseriesId%7D',
@@ -13,14 +18,31 @@ function film_data({}){
             'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
           }
         };
-        console.log(fetchData)
 
-        
-        try {
             const response = await axios.request(options);
-            console.log(response.data);
+            setData(response.data.results || []);
         } catch (error) {
-            console.error(error);
+            setError("Klarer ikke å hente data");
+        } finally {
+          setLoading(false);
         }
-}};
+      MovieCard()
+    };
+
+    fetchData();
+}, []);
+    if (loading) return <p>Laster...</p>;
+    if (error) return <p>{error}</p>;
+
+return (
+  <article>
+    <h1>Film Data</h1>
+    <ul> {data.map((item) =>(
+      <li key={item.id}>{item.title}</li>
+       
+    ))}</ul>
+  </article>
+)
+ };
+
 export default film_data
