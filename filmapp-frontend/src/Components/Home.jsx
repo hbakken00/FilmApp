@@ -29,7 +29,7 @@ const HomeComponent = () => {
             <h2>Favorittfilmer</h2>
           </header>
           <ul>
-            {user.favoriteMovies?.length > 0 ? (
+            {user.favoriteMovies?.length > 0 ? (    // for å sjekke om arrayene er definerte og ikke er tomme 
               user.favoriteMovies.map((movie, index) => (
                 <li key={index}>{movie.title}</li>
               ))
