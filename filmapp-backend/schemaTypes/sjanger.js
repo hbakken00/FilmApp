@@ -1,11 +1,8 @@
 export default {
-  name: 'movie',
+  name: 'genre',
   type: 'document',
-  title: 'Movie',
+  title: 'Genre',
   fields: [
-    { name: 'title', type: 'string', title: 'Title' },
-    { name: 'imdb_id', type: 'string', title: 'IMDB ID' },
-    { name: 'plot', type: 'text', title: 'Plot' },
-    { name: 'genres', type: 'array', title: 'Genres', of: [{ type: 'reference', to: { type: 'genre' } }] }
+    { name: 'name', type: 'string', title: 'Name' }
   ]
 };
