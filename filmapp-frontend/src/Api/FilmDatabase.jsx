@@ -13,6 +13,8 @@ function film_data({}){
             'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
           }
         };
+        console.log(fetchData)
+
         
         try {
             const response = await axios.request(options);

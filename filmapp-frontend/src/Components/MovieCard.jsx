@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import film_data from "../Api/FilmDatabase";
+import FilmDatabase from "../Api/FilmDatabase";
 
 
 export default function MovieCard({movie}){
