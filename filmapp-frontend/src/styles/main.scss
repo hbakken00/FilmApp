@@ -2,6 +2,7 @@
 @import 'login';
 @import 'navigasion';
 @import 'moviecard';
+@import 'sjanger';
 
 
   
@@ -11,6 +12,12 @@
     background-color: white;
     font-family: "Thasadith", sans-serif;
     margin-top: 200px;
+
+    h2{
+      display: flex;
+      font-size: xx-large;
+      justify-content: center;
+  }
 
 
    
