@@ -177,6 +177,18 @@ body, html {
   padding: 2rem;
   background-color: rgb(230, 230, 230);
 }
+.film-liste-hvaskaljegse ul li .movie-card h3 {
+  display: flex;
+  justify-content: center;
+}
+.film-liste-hvaskaljegse ul li .movie-card p {
+  display: flex;
+  justify-content: center;
+}
+.film-liste-hvaskaljegse ul li .movie-card a {
+  display: flex;
+  justify-content: center;
+}
 .film-liste-hvaskaljegse ul li .movie-card img {
   width: 200px;
   border-radius: 20px;
