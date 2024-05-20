@@ -1,0 +1,43 @@
+
+
+.film-liste-hvaskaljegse {
+    h2{
+        margin-top: 150px;
+        margin-left: 2rem;
+    }
+
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        justify-content: center;
+       li{
+        padding: 2rem;
+        list-style-type: none;
+
+       
+
+        .movie-card{
+            padding: 2rem;
+            width: 200px;
+            height: 500px;
+            padding: 2rem;
+            background-color: rgb(230, 230, 230);
+    
+            img{
+                width: 200px;
+                border-radius: 20px;
+            }
+        }
+        }
+    }
+
+       
+    }
+
+
+  
+
+
+

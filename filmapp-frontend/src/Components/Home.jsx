@@ -27,7 +27,7 @@ const HomeComponent = () => {
       <article>
         <section>
           <header>
-            <h2>Favorittfilmer</h2>
+            <h2>Favorittiflmer</h2>
           </header>
           <ul>
             {user.movie?.length > 0 ? (    // for å sjekke om arrayene er definerte og ikke er tomme 
