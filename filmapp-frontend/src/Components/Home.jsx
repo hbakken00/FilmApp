@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import client from '../Api/sanityClient'
+import MovieCard from './MovieCard'
 
 const HomeComponent = () => {
   const [user, setUser] = useState(null)
@@ -31,7 +33,7 @@ const HomeComponent = () => {
           <ul>
             {user.favoriteMovies?.length > 0 ? (    // for å sjekke om arrayene er definerte og ikke er tomme 
               user.favoriteMovies.map((movie, index) => (
-                <li key={index}>{movie.title}</li>
+                <li key={index}><MovieCard movie={movie}/></li>
               ))
             ) : (
               <li>Ingen favorittfilmer tilgjengelige</li>
