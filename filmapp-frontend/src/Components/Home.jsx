@@ -37,7 +37,7 @@ const HomeComponent = () => {
             ) : (
               <li>Ingen favorittfilmer tilgjengelige</li>
             )}
-            <MovieCard></MovieCard>
+           
           </ul>
         </section>
 
@@ -45,7 +45,7 @@ const HomeComponent = () => {
           <header>
             <h2>Foretrukne Sjangere</h2>
           </header>
-          <MovieCard/>
+      
           <ul>
             {user.preferredGenres?.length > 0 ? ( // for å sjekke om arrayene er definerte og ikke er tomme 
               user.preferredGenres.map((genre, index) => (

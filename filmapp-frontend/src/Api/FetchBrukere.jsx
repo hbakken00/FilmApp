@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react"
 import client from "../Api/sanityClient"
 import PropTypes from 'prop-types'
 import VelgBruker from "../Components/Login"
-
-const query = `*[_type == "user"]{
+// Groq QUERY
+const query = `*[_type == "user"]{    
   _id,
   name,
   username,
@@ -30,7 +30,7 @@ const FetchUsers = ({ onUserSelect }) => {
         const data = await client.fetch(query)
         setUsers(data)
       } catch (error) {
-        console.error("Error fetching users:", error)
+        console.error("Error fetching users:", error)   // catcher error til konsoll (ved error)
         setError("Feil ved fetch av brukere..")
       } finally {
         setLoading(false)
@@ -39,7 +39,7 @@ const FetchUsers = ({ onUserSelect }) => {
     fetchUsers()
 
   }, [])
-
+// IFTESTer for debug
   if (loading) return <p>Laster inn ...</p>
   if (error) return <p>{error}</p>
   if (!users.length) return <p>Ingen brukere tilgjengelige</p>
