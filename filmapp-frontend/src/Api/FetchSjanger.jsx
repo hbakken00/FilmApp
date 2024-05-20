@@ -1,6 +1,6 @@
 // src/Api/GenreListFetch.jsx
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Link } from 'react'
 import MovieCard from '../Components/MovieCard';
 import client from "./sanityClient"
 
@@ -16,7 +16,7 @@ const query = `*[_type == "genre"]{
 // funksjon for å fetche sjangere fra sanity client
 
 const FetchSjanger  = () => {
-    const [genres, setGenres] = useState([]);
+    const [sjanger, setSjanger] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error] = useState(null);
   
@@ -28,14 +28,9 @@ const FetchSjanger  = () => {
       try {
         const sjangerData = await client.fetch(query)
         console.log(sjangerData)
-        setGenres(sjangerData); 
+        setSjanger(sjangerData); 
       } catch (error) {
-
         console.error('Error ved fetch av sjangere:', error.message);  // logger error 
-
-
-      } finally {
-        setLoading(false);  // stopper loading av kallet med finally 
       }
     }
 
@@ -49,9 +44,9 @@ const FetchSjanger  = () => {
   <section className="genre-list">
   <h2>Sjangere</h2>
   <ul>
-    {genres.map((genre, index) => (
+    {sjanger.map((genre, index) => (
       <li key={index}>
-        <MovieCard movie={{ title: genre.name }} />
+        <Link to={`/sjanger/${genre._id}`}>{genre.name}</Link>
       </li>
     ))}
   </ul>
