@@ -10,7 +10,8 @@ const MovieCardFetch = () => {
   const [loading, setLoading] = useState(true)
   const [error] = useState(null)
 
-  useEffect(() => { // kaller imbd api fordi den andre var fucka til dette + den andre egner seg bedre til å mappe ut sjangre fant jeg ut!
+  useEffect(() => { //// fetcher titler fra https://moviesdatabase.p.rapidapi.com/titles/x/upcoming og skriver dem ut til MovieCard, må skrive en fetch til for sjanger 
+    
     const fetchFilmer = async () => {
       const url = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming';
       const options = {
