@@ -7,7 +7,7 @@ import client from "../Api/sanityClient"
 
 
 // Groq QUERY
-const query = `*[_type == "genre"]{    
+const query = `*[_type == "genre"]|order(name){    
   _id,
   name
 }`;
