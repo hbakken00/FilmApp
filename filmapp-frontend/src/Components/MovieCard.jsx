@@ -18,7 +18,7 @@ const MovieCard = ({ movie }) => {
      </section>
   );
 };
-// la inn proptypes for å unngå masse rød tekst errors 
+// la inn proptypes for endepunktene i APIet å unngå masse rød tekst errors 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     title: PropTypes.string.isRequired,

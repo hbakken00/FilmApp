@@ -66,7 +66,8 @@ const MovieCardFetch = () => {
               releaseYear: movie.releaseYear?.year || 'No release year available',
               imdb_id: movie.id || ''
             }}
-          /></li>
+          />
+          </li>
 
       ))}
     </ul>
