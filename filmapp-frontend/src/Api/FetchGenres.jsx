@@ -45,8 +45,10 @@ const FetchGenres = () => {
         <ul>
         {movieType.map((genre, item)=> ( 
             <li key={item}>
-                <MovieCard>
-            <p>{genre}</p> </MovieCard></li>
+            <MovieCard>
+                <p>{genre}</p> 
+            </MovieCard>
+            </li>
             ))} 
             </ul>
             </section>
