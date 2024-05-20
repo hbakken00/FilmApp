@@ -31,7 +31,6 @@ const FetchGenres = () => {
             }
         }
         getGenres();
-        console.log(getGenres, "dette funker")    
 
 
     }, []);
