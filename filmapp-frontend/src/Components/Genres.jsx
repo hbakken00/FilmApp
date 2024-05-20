@@ -1,8 +1,8 @@
 // src/Pages/GenrePage.jsx
 
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import client from "../Api/sanityClient";
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import client from "../Api/sanityClient"
 
 // Groq QUERY for fetching movies of a genre
 const query = `*[_type == "movie" && references($genreId)]{
@@ -13,7 +13,7 @@ const query = `*[_type == "movie" && references($genreId)]{
 
 const GenrePage = () => {
   const { genreId } = useParams();
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState([])
   const [genreName, setGenreName] = useState('');
 
   useEffect(() => {
@@ -21,18 +21,18 @@ const GenrePage = () => {
       try {
         const sjangerData = await client.fetch(`*[_type == "genre" && _id == $genreId]{name}`, { genreId });
         if (sjangerData.length > 0) {
-          setGenreName(sjangerData[0].name);
+          setGenreName(sjangerData[0].name)
         }
 
-        const filmData = await client.fetch(query, { genreId });
+        const filmData = await client.fetch(query, { genreId })
         setMovies(filmData);
       } catch (error) {
-        console.error('Error fetching movies:', error.message);
+        console.error('Error fetching movies:', error.message)
       }
     }
 
     fetchMovies();
-  }, [genreId]);
+  }, [genreId])
 
 
 
@@ -50,7 +50,7 @@ const GenrePage = () => {
         ))}
       </ul>
     </section>
-  );
-};
+  )
+}
 
-export default GenrePage;
+export default GenrePage
