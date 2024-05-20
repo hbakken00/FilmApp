@@ -2,56 +2,55 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import client from '../Api/sanityClient';
+import client from "../Api/sanityClient";
 
-// Groq QUERY to fetch a genre and its movies
-const genreQuery = `*[_type == "genre" && _id == $genreId][0]{
+// Groq QUERY for fetching movies of a genre
+const query = `*[_type == "movie" && references($genreId)]{
   _id,
-  name,
-  "movies": *[_type == "movie" && references(^._id)]{
-    _id,
-    title,
-    description,
-    "posterUrl": poster.asset->url
-  }
+  title,
+  imdbUrl
 }`;
 
 const GenrePage = () => {
   const { genreId } = useParams();
-  const [genre, setGenre] = useState(null);
-
+  const [movies, setMovies] = useState([]);
+  const [genreName, setGenreName] = useState('');
 
   useEffect(() => {
-    const fetchGenre = async () => {
+    const fetchMovies = async () => {
       try {
-        const genreData = await client.fetch(genreQuery, { genreId });
-        setGenre(genreData);
-  
+        const sjangerData = await client.fetch(`*[_type == "genre" && _id == $genreId]{name}`, { genreId });
+        if (sjangerData.length > 0) {
+          setGenreName(sjangerData[0].name);
+        }
+
+        const filmData = await client.fetch(query, { genreId });
+        setMovies(filmData);
       } catch (error) {
-        console.error('Error fetching genre:', error.message);
-   
+        console.error('Error fetching movies:', error.message);
       }
     }
 
-    fetchGenre()
-  }, [genreId])
+    fetchMovies();
+  }, [genreId]);
+
 
 
   return (
-    <section className="genre-page">
-      <h2>{genre.name}</h2>
-      <p>{genre.movies.length} movies</p>
+    <section className="genre-movies">
+      <h2>{genreName}</h2>
+      <p>{movies.length} Filmer er lagret </p>
       <ul>
-        {genre.movies.map((movie) => (
+        {movies.map((movie) => (
           <li key={movie._id}>
-            <h3>{movie.title}</h3>
-            <img src={movie.posterUrl} alt={movie.title} />
-            <p>{movie.description}</p>
+            <a href={movie.imdbUrl} target="_blank" rel="noopener noreferrer">
+              {movie.title}
+            </a>
           </li>
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
 export default GenrePage;
