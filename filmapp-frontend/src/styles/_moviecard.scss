@@ -2,8 +2,9 @@
 
 .film-liste-hvaskaljegse {
     h2{
-        margin-top: 150px;
-        margin-left: 2rem;
+        display: flex;
+        font-size: xx-large;
+        justify-content: center;
     }
 
 
@@ -24,6 +25,21 @@
             height: 500px;
             padding: 2rem;
             background-color: rgb(230, 230, 230);
+
+            h3{
+                display: flex;
+                justify-content: center;
+            }
+
+            p{
+                display: flex;
+                justify-content: center;
+        
+            }
+            a{
+                display: flex;
+                justify-content: center;
+            }
     
             img{
                 width: 200px;
