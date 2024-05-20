@@ -9,8 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 // Groq QUERY
-const query = `
-*[_type == "genre"] {
+const query = `*[_type == "genre"]|order(name){    
   _id,
   name,
   "movieCount": count(*[_type == "movie" && references(^._id)])

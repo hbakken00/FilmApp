@@ -2,7 +2,7 @@
 // fetcher titler fra https://moviesdatabase.p.rapidapi.com/titles/x/upcoming og skriver dem ut til MovieCard
 import React, { useEffect, useState } from 'react'
 import MovieCard from '../Components/MovieCard';
-
+import client from './sanityClient';
 
 
 const MovieCardFetch = () => {
@@ -31,6 +31,17 @@ const MovieCardFetch = () => {
         }
 
         const result = await response.json()
+        const filmer = result.data
+
+        for(const movie of filmer) {
+          await client.create({
+            _type: 'movie',
+            title: movie.title,
+            imdb_id: movie.imdb_id,
+            plot: movie.plot,
+            genres: movie.genres,
+          });
+        }
 
         console.log(result) // Logger resultatet av api kallet i konsoll for å sjekke strukturen og endepunktene
 
@@ -45,10 +56,13 @@ const MovieCardFetch = () => {
         setLoading(false);  // stopper loading av kallet med finally 
       }
     }
+
     
 
     fetchFilmer(); // kjører fetchen
   }, [])
+
+
 
   if (loading) return <p>Laster inn ...</p>;
   if (error) return <p>{error}</p>;
