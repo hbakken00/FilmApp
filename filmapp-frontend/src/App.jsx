@@ -7,6 +7,8 @@ import FetchUsers from "./Api/FetchBrukere"
 import './styles/main.css'
 import MovieCardFetch from './Api/MovieCardFetch'
 import FetchSjanger  from './Api/FetchSjanger'
+import GenrePage from './Components/Genres';
+
 
 
 
@@ -52,8 +54,11 @@ const BrukerLogin = () => {
       <Route path="/home" element={<HomeComponent />} />
       
       <Route path="/hva-skal-jeg-se" element={<MovieCardFetch />} />
-      
-      <Route path="/sjanger" element={<FetchSjanger  />} />
+
+      <Route path="/sjangere" element={<FetchSjanger />} />
+
+      <Route path="/sjanger/:genreId" element={<GenrePage />} />
+
 
       <Route path="/" element={<Navigate to="/velg-bruker" />} />
 

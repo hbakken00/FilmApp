@@ -20,7 +20,7 @@ export const Navigation = () =>{
            
            <li><Link to="/hva-skal-jeg-se"><RiTv2Line /> Hva skal jeg se?</Link></li>       
           
-           <li><Link to="/sjanger">Bla gjennom sjangere</Link></li>
+           <li><Link to="/sjangere">Bla gjennom sjangere</Link></li>
          
            <li><Link to="/velg-bruker"><RiAccountCircleFill /> Bruker</Link></li>
        

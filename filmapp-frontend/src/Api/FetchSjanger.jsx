@@ -1,15 +1,19 @@
 // src/Api/GenreListFetch.jsx
 
-import React, { useEffect, useState, Link } from 'react'
+import React, { useEffect, useState} from 'react'
 import MovieCard from '../Components/MovieCard';
 import client from "./sanityClient"
+import { Link } from 'react-router-dom';
+
 
 
 
 // Groq QUERY
-const query = `*[_type == "genre"]{    
+const query = `
+*[_type == "genre"] {
   _id,
-  name
+  name,
+  "movieCount": count(*[_type == "movie" && references(^._id)])
 }`;
 
 
@@ -22,31 +26,34 @@ const FetchSjanger  = () => {
   
 
   useEffect(() => { 
+    
     const fetchSjanger  = async () => {
  
-
       try {
         const sjangerData = await client.fetch(query)
-        console.log(sjangerData)
+
         setSjanger(sjangerData); 
+        console.log(sjangerData)
+        setLoading(false);
+
       } catch (error) {
         console.error('Error ved fetch av sjangere:', error.message);  // logger error 
+        setLoading(false)
       }
     }
 
     fetchSjanger() // kjører fetchen
   }, [])
 
-  if (loading) return <p>Laster inn ...</p>;
   if (error) return <p>{error}</p>
 
   return (  // returnerer seksjon med klasse sjanger-liste
   <section className="genre-list">
-  <h2>Sjangere</h2>
+  <h2>Genres</h2>
   <ul>
-    {sjanger.map((genre, index) => (
-      <li key={index}>
-        <Link to={`/sjanger/${genre._id}`}>{genre.name}</Link>
+    {sjanger.map((genre) => (
+      <li key={genre._id}>
+        <Link to={`/sjanger/${genre._id}`}>{genre.name} ({genre.movieCount})</Link>
       </li>
     ))}
   </ul>
