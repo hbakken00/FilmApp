@@ -33,6 +33,7 @@ const Genres = () => {
         fetchGenres();
         console.log(fetchGenres, "dette funker")    
 
+
     }, []);
     
     if (loading)return <p>Loading Please Wait </p>
@@ -54,4 +55,5 @@ const Genres = () => {
             </section>
             )
 }
+
 export default Genres;
