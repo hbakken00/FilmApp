@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import MovieCard from '../Components/MovieCard';
-import client from "../Api/sanityClient"
+import client from "./sanityClient"
 
 
 
@@ -15,7 +15,7 @@ const query = `*[_type == "genre"]|order(name){
 
 // funksjon for å fetche sjangere fra sanity client
 
-const FetchGenres  = () => {
+const FetchSjanger  = () => {
     const [genres, setGenres] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error] = useState(null);
@@ -59,5 +59,5 @@ const FetchGenres  = () => {
   )
 }
 
-export default FetchGenres ;
+export default FetchSjanger ;
 
