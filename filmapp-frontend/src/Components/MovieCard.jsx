@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import client from "../Api/sanityClient";
 import { useState, useEffect } from "react";
 import movie from "../../../filmapp-backend/schemaTypes/movie";
-import genre from "../../../filmapp-backend/schemaTypes/genre";
 
 
 const fetchMovies = async () => { 
@@ -18,7 +17,8 @@ const movies = await client.fetch(query)
 return movies; 
 };
 
-const MovieCard = () => {
+const MovieCard = ({movies}) => {
+    if (!movies) return null;
     const [movies, setMovies] = useState ([]);
 
     useEffect (() => {
@@ -26,7 +26,7 @@ const MovieCard = () => {
     }, []);
 return ( 
     <article> 
-        {movie.map(movie =>(
+        {movie.map(movies =>(
             <section key={movie.imdb_id}>
                 <h2>{movie.title}</h2>
                 <img src ={movie.cover_image} alt={`${movie.title} poster`}/>

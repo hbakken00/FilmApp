@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import client from '../Api/sanityClient'
 import MovieCard from './MovieCard'
+import FilmDatabase from '../Api/FilmDatabase'
+
 
 const HomeComponent = () => {
   const [user, setUser] = useState(null)
@@ -45,6 +46,7 @@ const HomeComponent = () => {
           <header>
             <h2>Foretrukne Sjangere</h2>
           </header>
+          <FilmDatabase></FilmDatabase>
           <ul>
             {user.preferredGenres?.length > 0 ? ( // for å sjekke om arrayene er definerte og ikke er tomme 
               user.preferredGenres.map((genre, index) => (

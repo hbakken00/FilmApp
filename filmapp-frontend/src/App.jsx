@@ -49,7 +49,6 @@ const BrukerLogin = () => {
       <Route path="/velg-bruker" element={<FetchUsers onUserSelect={brukerValg} />} /> 
       <Route path="/home" element={<HomeComponent />} />
       <Route path="*" element={<Navigate to="/velg-bruker" />} />
-      <Route path="/movies" Component={MovieCard} />
     </Routes>
   )
 }
