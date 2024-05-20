@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import "../styles/main.scss";
 
 // login "velg bruker" funksjon
-const VelgBruker = ({ onUserSelect, users }) => { // parameter som sendes med til App.jsx
+const VelgBruker = ({ onUserSelect, users }) => {
+  // parameter som sendes med til App.jsx
   console.log("VelgBruker rendered"); // Debug output av VelgBruker
   console.log("Users:", users); // Debug output for å sjekke users
   return (
@@ -14,7 +15,7 @@ const VelgBruker = ({ onUserSelect, users }) => { // parameter som sendes med ti
       </header>
       <nav>
         <ul className="bruker-knapper">
-          {users.map(user => (
+          {users.map((user) => (
             <li key={user._id}>
               <button onClick={() => onUserSelect(user)}>{user.name}</button>
             </li>
@@ -25,7 +26,8 @@ const VelgBruker = ({ onUserSelect, users }) => { // parameter som sendes med ti
   );
 };
 
-VelgBruker.propTypes = {// måtte legge inn denne fordi proptype error i konsollen 
+VelgBruker.propTypes = {
+  // måtte legge inn denne fordi proptype error i konsollen
   onUserSelect: PropTypes.func.isRequired,
   users: PropTypes.array.isRequired,
 };
@@ -33,6 +35,3 @@ VelgBruker.propTypes = {// måtte legge inn denne fordi proptype error i konsoll
 export default VelgBruker;
 
 // har forsøkt å gjøre dette så semantisk som mulig med section for innholdskropp, header, nav og ul <li>
-
-
-
