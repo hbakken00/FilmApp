@@ -45,6 +45,7 @@ const MovieCardFetch = () => {
         setLoading(false);  // stopper loading av kallet med finally 
       }
     }
+    
 
     fetchFilmer(); // kjører fetchen
   }, [])

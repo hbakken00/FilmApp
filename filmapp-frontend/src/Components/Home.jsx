@@ -16,9 +16,7 @@ const HomeComponent = () => {
   }
 
   return ( 
-  // foreløpig html struktur som mapper og skriver ut .. 
-  // har ikke style enda og den mapper bare fra bruker,
-  // js men skal egentlig mappe fra egen array fil i sanity som vi skal pushe API kallene til
+    
 <main className="main-innhold">
       <header>
         <h1>Velkommen, {user.name}!</h1>
