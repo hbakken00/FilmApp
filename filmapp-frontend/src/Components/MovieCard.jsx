@@ -10,7 +10,7 @@ const MovieCard = ({ movie }) => {
   {movie.cover_image && 
   <img src={movie.cover_image} alt={movie.title} />}
   <p>{movie.releaseYear}</p>
-  {movie.genres && (<p>Sjangere: {movie.genres.join(', ')}</p>)}
+  {movie.genres && <p>Sjangere: {movie.genres.join(', ')}</p>}
   {movie.imdb_id && (
     <Link to={`https://www.imdb.com/title/${movie.imdb_id}`} target="_blank">
       Sjekk ut på IMDB

@@ -2,8 +2,18 @@
 
 import React, { useEffect, useState } from 'react'
 import MovieCard from '../Components/MovieCard';
+import client from "../Api/sanityClient"
 
 
+
+// Groq QUERY
+const query = `*[_type == "genre"]{    
+  _id,
+  name
+}`;
+
+
+// funksjon for å fetche sjangere fra sanity client
 
 const FetchGenres  = () => {
     const [genres, setGenres] = useState([]);
@@ -11,32 +21,14 @@ const FetchGenres  = () => {
     const [error] = useState(null);
   
 
-  useEffect(() => { // fetcher sjangere fra https://moviesdatabase.p.rapidapi.com/titles/utils/genres
-    
+  useEffect(() => { 
     const fetchSjanger  = async () => {
-        const url = 'https://moviesdatabase.p.rapidapi.com/titles/utils/genres'
-        const options = {
-          method: 'GET',
-          headers: {
-            'X-RapidAPI-Key': '14536ac053msh92dbe7539474928p1a546fjsnc6640c6bf5f6',
-            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-          }
-        }
+ 
 
       try {
-        console.log('Fetcher sjangere...'); // logger for å debugge 
-
-        const response = await fetch(url, options)
-        if (!response.ok) {
-          throw new Error('Network response was not ok')
-        }
-
-        const result = await response.json()
-
-        console.log(result) // Logger resultatet av api kallet i konsoll for å sjekke strukturen og endepunktene
-
-
-        setGenres(result.results); 
+        const sjangerData = await client.fetch(query)
+        console.log(sjangerData)
+        setGenres(sjangerData); 
       } catch (error) {
 
         console.error('Error ved fetch av sjangere:', error.message);  // logger error 
@@ -47,17 +39,22 @@ const FetchGenres  = () => {
       }
     }
 
-    fetchSjanger(); // kjører fetchen
+    fetchSjanger() // kjører fetchen
   }, [])
 
   if (loading) return <p>Laster inn ...</p>;
-  if (error) return <p>{error}</p>;
+  if (error) return <p>{error}</p>
 
   return (  // returnerer seksjon med klasse sjanger-liste
-<section className="sjanger-list">
-  
-  <MovieCard movie={{ title: 'Sjangere', genres }} />
-
+  <section className="genre-list">
+  <h2>Sjangere</h2>
+  <ul>
+    {genres.map((genre, index) => (
+      <li key={index}>
+        <MovieCard movie={{ title: genre.name }} />
+      </li>
+    ))}
+  </ul>
 </section>
   )
 }
