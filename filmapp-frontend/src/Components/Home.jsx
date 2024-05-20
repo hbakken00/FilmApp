@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import MovieCard from './MovieCard'
-import FilmDatabase from '../Api/FilmDatabase'
-
 
 const HomeComponent = () => {
   const [user, setUser] = useState(null)
@@ -32,13 +30,14 @@ const HomeComponent = () => {
             <h2>Favorittfilmer</h2>
           </header>
           <ul>
-            {user.favoriteMovies?.length > 0 ? (    // for å sjekke om arrayene er definerte og ikke er tomme 
-              user.favoriteMovies.map((movie, index) => (
+            {user.movie?.length > 0 ? (    // for å sjekke om arrayene er definerte og ikke er tomme 
+              user.movie.map((movie, index) => (
                 <li key={index}><MovieCard movie={movie}/></li>
               ))
             ) : (
               <li>Ingen favorittfilmer tilgjengelige</li>
             )}
+            <MovieCard></MovieCard>
           </ul>
         </section>
 
@@ -46,7 +45,7 @@ const HomeComponent = () => {
           <header>
             <h2>Foretrukne Sjangere</h2>
           </header>
-          <FilmDatabase></FilmDatabase>
+          <MovieCard/>
           <ul>
             {user.preferredGenres?.length > 0 ? ( // for å sjekke om arrayene er definerte og ikke er tomme 
               user.preferredGenres.map((genre, index) => (
