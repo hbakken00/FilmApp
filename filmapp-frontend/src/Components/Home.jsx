@@ -28,9 +28,9 @@ const HomeComponent = () => {
             <h2>Favorittiflmer</h2>
           </header>
           <ul>
-            {user.movie?.length > 0 ? (    // for å sjekke om arrayene er definerte og ikke er tomme 
-              user.movie.map((movie, index) => (
-                <li key={index}><MovieCard movie={movie}/></li>
+            {user.favoriteMovies?.length > 0 ? (    // for å sjekke om arrayene er definerte og ikke er tomme 
+              user.favoriteMovies.map((movie, index) => (
+                <li key={index}>{movie.name}</li>
               ))
             ) : (
               <li>Ingen favorittfilmer tilgjengelige</li>
