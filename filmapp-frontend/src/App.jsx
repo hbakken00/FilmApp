@@ -5,7 +5,7 @@ import { Navigation } from './Components/Navigation'
 import HomeComponent from './Components/Home'
 import FetchUsers from "./Api/FetchBrukere"
 import './styles/main.css'
-import HvaSkalJegSe from './Components/HvaSkalJegSe'
+import MovieCardFetch from './Api/MovieCardFetch'
 
 
 
@@ -50,11 +50,11 @@ const BrukerLogin = () => {
       
       <Route path="/home" element={<HomeComponent />} />
       
-      <Route path="/hva-skal-jeg-se" element={<HvaSkalJegSe />} />
+      <Route path="/hva-skal-jeg-se" element={<MovieCardFetch />} />
       
-      <Route path="/sjangere" element={<div>Bla gjennom sjangere content her</div>} /> {/* Placeholder for Sjangere component */}
+      <Route path="/sjangere" element={<div>Bla gjennom sjangere content her</div>} /> {/* placeholder for Sjangere komponent */}
 
-      <Route path="*" element={<Navigate to="/velg-bruker" />} />
+      <Route path="/" element={<Navigate to="/velg-bruker" />} />
 
       
 
