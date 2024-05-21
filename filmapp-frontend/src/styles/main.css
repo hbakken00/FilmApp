@@ -228,6 +228,10 @@ body, html {
   border-radius: 20px;
 }
 
+.genre-movies p {
+  display: flex;
+  justify-content: center;
+}
 .genre-movies ul {
   display: flex;
   flex-wrap: wrap;

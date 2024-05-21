@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import client from "../Api/sanityClient"
+import { Link } from "react-router-dom";
 
 const HomeComponent = () => {
   const [user, setUser] = useState(null);
