@@ -28,8 +28,8 @@ export default {
       of: [{ type: 'reference', to: { type: 'genre' } }],
     },
     {
-      name: 'cover',
-      title: 'Cover',
+      name: 'cover_image',
+      title: 'Cover_image',
       type: 'url',
     },
     
