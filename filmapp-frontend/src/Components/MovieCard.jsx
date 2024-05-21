@@ -23,5 +23,14 @@ const MovieCard = ({ movie }) => {
   );
 };
 // la inn proptypes for endepunktene i APIet å unngå masse rød tekst errors
+MovieCard.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    cover_image: PropTypes.string,
+    releaseYear: PropTypes.number,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    imdb_id: PropTypes.string,
+  }),
+}
 
 export default MovieCard;

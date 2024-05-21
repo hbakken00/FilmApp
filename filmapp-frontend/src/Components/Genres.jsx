@@ -6,44 +6,53 @@ import client from "../Api/sanityClient"
 import MovieCard from './MovieCard';
 
 // Groq QUERY for fetching movies of a genre
-const query = `*[_type == "movie" && references($genreId)]{
+const query = `*[_type == "genre" && _id == $genreId][0]{
   _id,
-  title,
-  imdbUrl
+  name,
+  "movies": *[_type == "movie" && references(^._id)]{
+    _id,
+    title,
+    description,
+    "posterUrl": poster.asset->url,
+    imdb_id,
+    cover_image,
+    releaseYear
+  }
 }`;
 
 const GenrePage = () => {
   const { genreId } = useParams();
-  const [movies, setMovies] = useState([])
-  const [genreName, setGenreName] = useState('');
+  const [genre, setGenre] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error] = useState(null);
 
   useEffect(() => {
-    const fetchMovies = async () => {
+    const fetchGenre = async () => {
       try {
-        const sjangerData = await client.fetch(`*[_type == "genre" && _id == $genreId]{name}`, { genreId });
-        if (sjangerData.length > 0) {
-          setGenreName(sjangerData[0].name)
-        }
-
-        const filmData = await client.fetch(query, { genreId })
-        setMovies(filmData);
+        const genreData = await client.fetch(query, { genreId });
+        setGenre(genreData);
+        setLoading(false);
       } catch (error) {
-        console.error('Error fetching movies:', error.message)
+        setLoading(false);
       }
-    }
+    };
 
-    fetchMovies();
-  }, [genreId])
+    fetchGenre();
+  }, [genreId]);
+
+  if (loading) return <p>Laster inn ...</p>;
+  if (error) return <p>{error}</p>;
+  if (!genre) return <p>Ingen data funnet</p>;
 
 
 
-  return (
+  return ( // legger inn movieCard som displayer den akutelle filmen
     <section className="genre-movies">
-      <h2>{genreName}</h2>
-      <p>{movies.length} Filmer er lagret </p>
+      <h2>{genre.name}</h2>
+      <p>{genre.movies.length} Filmer er lagret </p>
       <ul>
-        {movies.map((movie) => (
-          <li key={movie}>
+        {genre.movies.map((movie) => (
+          <li key={movie._id}>
             <MovieCard movie={movie} />
           </li>
         ))}
