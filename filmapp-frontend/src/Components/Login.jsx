@@ -5,7 +5,7 @@ import "../styles/main.scss";
 // login "velg bruker" funksjon
 const VelgBruker = ({ onUserSelect, users }) => {
   // parameter som sendes med til App.jsx
-  console.log("VelgBruker rendered"); // Debug output av VelgBruker
+  console.log("VelgBruker rendret"); // Debug output av VelgBruker
   console.log("Users:", users); // Debug output for å sjekke users
   return (
     <section className="bruker-valg">
@@ -34,4 +34,4 @@ VelgBruker.propTypes = {
 
 export default VelgBruker;
 
-// har forsøkt å gjøre dette så semantisk som mulig med section for innholdskropp, header, nav og ul <li>
+// har forsøkt å gjøre dette så semantisk som mulig med section for innholdskropp, header, nav og ul og liste elementer
