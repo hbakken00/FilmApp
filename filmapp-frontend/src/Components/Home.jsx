@@ -26,15 +26,12 @@ const HomeComponent = () => {
             <h2>Favorittfilmer</h2>
           </header>
           <ul>
-            {user.favoriteMovies && user.favoriteMovies.length > 0 ? (
-              user.favoriteMovies.map((movie) => (
-                <li>
-                   <MovieCard movie={movie} />  
-                </li>
-              ))
-            ) : (
-              <li>Ingen favorittfilmer tilgjengelige</li>
-            )}
+            {user.favoriteMovies?.map((movie) => (
+              <li key={movie._id}>
+                <MovieCard movie={movie} />
+              </li>
+            ))}
+            {!(user.favoriteMovies?.length) && <li>Ingen favorittfilmer tilgjengelige</li>}
           </ul>
         </section>
 
@@ -43,13 +40,10 @@ const HomeComponent = () => {
             <h2>Foretrukne Sjangere</h2>
           </header>
           <ul>
-            {user.preferredGenres && user.preferredGenres.length > 0 ? (
-              user.preferredGenres.map((genre) => (
-                <li key={genre._id}>{genre.name}</li>
-              ))
-            ) : (
-              <li>Ingen foretrukne sjangere tilgjengelige</li>
-            )}
+            {user.preferredGenres?.map((genre) => (
+              <li key={genre._id}>{genre.name}</li>
+            ))}
+            {!(user.preferredGenres?.length) && <li>Ingen foretrukne sjangere tilgjengelige</li>}
           </ul>
         </section>
       </article>

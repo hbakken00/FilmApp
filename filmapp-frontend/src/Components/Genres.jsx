@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import client from "../Api/sanityClient"
+import MovieCard from './MovieCard';
 
 // Groq QUERY for fetching movies of a genre
 const query = `*[_type == "movie" && references($genreId)]{
@@ -42,10 +43,8 @@ const GenrePage = () => {
       <p>{movies.length} Filmer er lagret </p>
       <ul>
         {movies.map((movie) => (
-          <li key={movie._id}>
-            <a href={movie.imdbUrl} target="_blank" rel="noopener noreferrer">
-              {movie.title}
-            </a>
+          <li>
+            <MovieCard movie={movie} />
           </li>
         ))}
       </ul>
