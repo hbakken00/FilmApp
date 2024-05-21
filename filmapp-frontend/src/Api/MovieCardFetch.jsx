@@ -26,27 +26,30 @@ const MovieCardFetch = () => {
         console.log('Fetching movies...'); // logger for å debugge 
 
         const response = await fetch(url, options)
-        if (!response.ok) {
-          throw new Error('Network response was not ok')
-        }
-
         const result = await response.json()
-        const filmer = result.data
 
-        for(const movie of filmer) {
-          await client.create({
-            _type: 'movie',
-            title: movie.title,
-            imdb_id: movie.imdb_id,
-            plot: movie.plot,
-            genres: movie.genres,
-          });
-        }
+        if (response.ok) {
+          if (Array.isArray(result.results)){
+            setMovies(result.results); 
+
+
+            for(const movie of result.results) {
+              await client.create({
+                _type: 'movie',
+                title: movie.title,
+                imdb_id: movie.imdb_id,
+                plot: movie.plot,
+                genres: movie.genres,
+              });
+            }
+
+          }
+          }
+
 
         console.log(result) // Logger resultatet av api kallet i konsoll for å sjekke strukturen og endepunktene
 
 
-        setMovies(result.results); 
       } catch (error) {
 
         console.error('Error fetching movies:', error.message);  // logger error 
