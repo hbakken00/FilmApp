@@ -8,7 +8,7 @@ const MovieCard = ({ movie }) => {
     // kan skrive mer sematisk da tilslutt
     <section className="movie-card">
       <h3>{movie.title}</h3>
-      {movie.cover_image && <img src={movie.cover_image} alt={movie.title} />}
+      {movie.cover_image && <img src={ movie.cover_image} alt={movie.title} />}
       <p>{movie.releaseYear}</p>
       {movie.genres && <p>Sjangere: {movie.genres.join(", ")}</p>}
       {movie.imdb_id && (

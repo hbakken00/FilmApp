@@ -28,8 +28,8 @@ const HomeComponent = () => {
           <ul>
             {user.favoriteMovies && user.favoriteMovies.length > 0 ? (
               user.favoriteMovies.map((movie) => (
-                <li key={movie._id}>
-                  <MovieCard movie={movie} />
+                <li>
+                   <MovieCard movie={movie} />  
                 </li>
               ))
             ) : (
