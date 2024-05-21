@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import client from "../Api/sanityClient"
 import MovieCard from './MovieCard';
 
-// Groq QUERY for fetching movies of a genre
+// Groq QUERY query for å fetche sjanger fra sanity
 const query = `*[_type == "genre" && _id == $genreId][0]{
   _id,
   name,
