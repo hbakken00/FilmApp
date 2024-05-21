@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import MovieCard from '../Components/MovieCard';
 import client from './sanityClient';
+import genre from '../../../filmapp-backend/schemaTypes/genre';
 
 const MovieCardFetch = () => {
   const [movies, setMovies] = useState([]);
@@ -34,7 +35,7 @@ const MovieCardFetch = () => {
               const title = movie.originalTitleText?.text || 'Ukjent tittel';
               const imdb_id = movie.id || '';
               const plot = movie.plot || 'Ingen breskrivelse tilgjengelig';
-              const genres = movie.genres || 'Ukjent sjanger :( '
+              const genres = await hentGenres (movie.genres);
               const cover_image = movie.primaryImage?.url || '';
 
               console.log({
@@ -51,7 +52,7 @@ const MovieCardFetch = () => {
                   title,
                   imdb_id,
                   plot,
-                  genres: movie.genres,
+                  genres,
                   cover_image: cover_image,
                 });
               } else {
@@ -73,7 +74,19 @@ const MovieCardFetch = () => {
 
     fetchFilmer();
   }, []);
-
+  const hentGenres = async (genreRef) => {
+    try {
+      const sjangere = await Promise.all(
+        genreRef.map(async (genreRef) => {
+          const genreDoc = await client.getDocument(genreRef._ref);
+          return genreDoc?.name || '';
+        })
+      );
+      return sjangere;
+    } catch (error) {
+      console.error('Error fetching genres:', error.message);
+      return [];}
+    }
   if (loading) return <p>Laster inn vent litt...</p>;
   if (error) return <p>{error}</p>;
 
