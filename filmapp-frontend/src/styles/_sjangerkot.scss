@@ -1,4 +1,8 @@
 .genre-movies{
+    p{
+        display: flex;
+        justify-content: center;
+    }
     ul{
         display: flex;
         flex-wrap: wrap;
