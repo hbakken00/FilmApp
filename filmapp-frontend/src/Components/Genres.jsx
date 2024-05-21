@@ -43,7 +43,7 @@ const GenrePage = () => {
       <p>{movies.length} Filmer er lagret </p>
       <ul>
         {movies.map((movie) => (
-          <li>
+          <li key={movie}>
             <MovieCard movie={movie} />
           </li>
         ))}
