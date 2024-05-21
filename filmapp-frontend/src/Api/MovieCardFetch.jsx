@@ -34,12 +34,14 @@ const MovieCardFetch = () => {
               const title = movie.originalTitleText?.text || 'Ukjent tittel';
               const imdb_id = movie.id || '';
               const plot = movie.plot || 'Ingen breskrivelse tilgjengelig';
+              const genres = movie.genres || 'Ukjent sjanger :( '
               const cover_image = movie.primaryImage?.url || '';
 
               console.log({
                 title,
                 imdb_id,
                 plot,
+                genres,
                 cover_image,
               });
 
