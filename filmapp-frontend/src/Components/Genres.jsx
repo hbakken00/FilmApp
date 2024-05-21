@@ -18,7 +18,9 @@ const query = `*[_type == "genre" && _id == $genreId][0]{
     cover_image,
     releaseYear
   }
-}`;
+}`
+
+;
 
 const GenrePage = () => {
   const { genreId } = useParams();
@@ -29,20 +31,20 @@ const GenrePage = () => {
   useEffect(() => {
     const fetchGenre = async () => {
       try {
-        const genreData = await client.fetch(query, { genreId });
+        const genreData = await client.fetch(query, { genreId })
         setGenre(genreData);
         setLoading(false);
       } catch (error) {
         setLoading(false);
       }
-    };
+    }
 
     fetchGenre();
-  }, [genreId]);
+  }, [genreId])
 
-  if (loading) return <p>Laster inn ...</p>;
-  if (error) return <p>{error}</p>;
-  if (!genre) return <p>Ingen data funnet</p>;
+  if (loading) return <p>Laster inn ...</p>
+  if (error) return <p>{error}</p>
+  if (!genre) return <p>Ingen data funnet</p>
 
 
 
