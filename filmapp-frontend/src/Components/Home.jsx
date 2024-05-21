@@ -31,7 +31,7 @@ const HomeComponent = () => {
                 <MovieCard movie={movie} />
               </li>
             ))}
-            {!(user.favoriteMovies?.length) && <li>Ingen favorittfilmer tilgjengelige</li>}
+          
           </ul>
         </section>
 
@@ -43,7 +43,7 @@ const HomeComponent = () => {
             {user.preferredGenres?.map((genre) => (
               <li key={genre._id}>{genre.name}</li>
             ))}
-            {!(user.preferredGenres?.length) && <li>Ingen foretrukne sjangere tilgjengelige</li>}
+            
           </ul>
         </section>
       </article>
