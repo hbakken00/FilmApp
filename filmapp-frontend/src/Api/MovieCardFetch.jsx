@@ -52,7 +52,7 @@ const MovieCardFetch = () => {
                   imdb_id,
                   plot,
                   genres: movie.genres,
-                  cover: cover_image,
+                  cover_image: cover_image,
                 });
               } else {
                 console.warn('feil', movie, 'navn');
