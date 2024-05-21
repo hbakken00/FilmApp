@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
+import { Link } from "react-router-dom";
 
 const HomeComponent = () => {
   const [user, setUser] = useState(null);
@@ -41,7 +42,7 @@ const HomeComponent = () => {
           </header>
           <ul>
             {user.preferredGenres?.map((genre) => (
-              <li key={genre._id}>{genre.name}</li>
+             <Link to="/sjangere"> <li key={genre._id}>{genre.name}</li></Link>
             ))}
             {!(user.preferredGenres?.length) && <li>Ingen foretrukne sjangere tilgjengelige</li>}
           </ul>
