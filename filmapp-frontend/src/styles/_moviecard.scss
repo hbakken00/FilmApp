@@ -1,4 +1,10 @@
 .main-innhold{
+
+    h1{
+        display: flex;
+        justify-content: center;
+        font-size: xx-large;
+    }
     ul{
         display: flex;
         flex-wrap: wrap;

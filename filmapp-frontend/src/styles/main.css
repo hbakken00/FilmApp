@@ -155,6 +155,11 @@ body, html {
     display: flex;
   }
 }
+.main-innhold h1 {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+}
 .main-innhold ul {
   display: flex;
   flex-wrap: wrap;
