@@ -155,11 +155,6 @@ body, html {
     display: flex;
   }
 }
-.film-liste-hvaskaljegse h2 {
-  display: flex;
-  font-size: xx-large;
-  justify-content: center;
-}
 .film-liste-hvaskaljegse ul {
   display: flex;
   flex-wrap: wrap;
@@ -194,8 +189,81 @@ body, html {
   border-radius: 20px;
 }
 
+.genre-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: center;
+}
+.genre-list ul li {
+  padding: 2rem;
+  list-style-type: none;
+}
+.genre-list ul li .movie-card {
+  padding: 2rem;
+  width: 5rem;
+  height: 3rem;
+  padding: 2rem;
+  background-color: rgb(230, 230, 230);
+}
+.genre-list ul li .movie-card h3 {
+  display: flex;
+  justify-content: center;
+}
+.genre-list ul li .movie-card p {
+  display: flex;
+  justify-content: center;
+}
+.genre-list ul li .movie-card a {
+  display: flex;
+  justify-content: center;
+}
+.genre-list ul li .movie-card img {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.genre-movies ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: center;
+}
+.genre-movies ul li {
+  padding: 2rem;
+  list-style-type: none;
+}
+.genre-movies ul li .movie-card {
+  padding: 2rem;
+  width: 200px;
+  height: 500px;
+  padding: 2rem;
+  background-color: rgb(230, 230, 230);
+}
+.genre-movies ul li .movie-card h3 {
+  display: flex;
+  justify-content: center;
+}
+.genre-movies ul li .movie-card p {
+  display: flex;
+  justify-content: center;
+}
+.genre-movies ul li .movie-card a {
+  display: flex;
+  justify-content: center;
+}
+.genre-movies ul li .movie-card img {
+  width: 200px;
+  border-radius: 20px;
+}
+
 body {
   background-color: white;
   font-family: "Thasadith", sans-serif;
   margin-top: 200px;
+}
+body h2 {
+  display: flex;
+  font-size: xx-large;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */

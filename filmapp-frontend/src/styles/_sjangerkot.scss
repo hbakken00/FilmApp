@@ -1,0 +1,44 @@
+.genre-movies{
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2rem;
+        justify-content: center;
+       li{
+        padding: 2rem;
+        list-style-type: none;
+
+       
+
+        .movie-card{
+            padding: 2rem;
+            width: 200px;
+            height: 500px;
+            padding: 2rem;
+            background-color: rgb(230, 230, 230);
+
+            h3{
+                display: flex;
+                justify-content: center;
+            }
+
+            p{
+                display: flex;
+                justify-content: center;
+        
+            }
+            a{
+                display: flex;
+                justify-content: center;
+            }
+    
+            img{
+                width: 200px;
+                border-radius: 20px;
+            }
+        }
+        }
+    }
+
+       
+    }
