@@ -30,7 +30,7 @@ const MovieCardFetch = () => {
         if (response.ok) {
           if (Array.isArray(result.results)) {
             setMovies(result.results);
-
+              // Under er en en for løkke / funksjon for å koble til sanity studio og apiet
             for (const movie of result.results) {
               const title = movie.originalTitleText?.text || 'Ukjent tittel';
               const imdb_id = movie.id || '';
@@ -76,6 +76,7 @@ const MovieCardFetch = () => {
   }, []);
   const hentGenres = async (genreRef) => {
     try {
+      //Prøvde å mappe ut sjangere men får at det er undefined.. 
       const sjangere = await Promise.all(
         genreRef.map(async (genreRef) => {
           const genreDoc = await client.getDocument(genreRef._ref);
