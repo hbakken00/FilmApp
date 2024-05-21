@@ -91,7 +91,7 @@ const HomeComponent = () => {
           <ul>
             {additionalMovies.length > 0 ? (
               additionalMovies.map((movie) => (
-                <li key={`additional-movie-${movie.title}`}>
+                <li key={`additional-movie-${movie._ref}`}>
                   <MovieCard movie={movie} />
                 </li>
               ))
